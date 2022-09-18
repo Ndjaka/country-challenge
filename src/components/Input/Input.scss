@@ -1,0 +1,28 @@
+@import "../../sass/colors";
+@import "../../sass/typography";
+
+.text__field{
+  margin-top: 25px;
+  position: relative;
+  [name="search"]{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 17px;
+  }
+  input{
+    font-size: $home-page-items;
+    background: $dark-mode-elements;
+    height: 55px;
+    outline: none;
+    border: none;
+    border-radius:3px;
+    color: $dark-mode-text-and-light-mode-elements;
+    font-weight: 300;
+    padding: 0 45px;
+    width: calc(100% - 90px);
+    &::placeholder {
+      color: $dark-mode-text-and-light-mode-elements;
+    }
+  }
+}

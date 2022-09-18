@@ -1,0 +1,22 @@
+@import "../../sass/typography";
+@import "../../sass/colors";
+
+.header{
+  display: flex;
+  height: 70px;
+  background-color: $dark-mode-elements;
+  padding: 12px 10px 0 10px ;
+  font-size: $home-page-items;
+  &__text{
+    font-weight: 800;
+    margin-right: auto;
+  }
+  &__color-mode{
+    font-weight: 300;
+    display: flex;
+    [name="moon-sharp"]{
+      margin-top: 1px;
+      margin-right: 6px;
+    }
+  }
+}

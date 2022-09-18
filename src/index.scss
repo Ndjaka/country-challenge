@@ -1,0 +1,18 @@
+@import "sass/colors";
+@import "sass/typography";
+:root {
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: $dark-mode-background;
+  color: $dark-mode-text-and-light-mode-elements;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// layout
+.main{
+  padding: 0 10px ;
+
+}
