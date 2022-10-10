@@ -1,0 +1,17 @@
+@import "../../sass/mixins";
+@import "../../sass/mixins";
+
+.main{
+  padding: 0 10px ;
+  &__toolbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include respond(tab-land){
+    padding: 0 92px;
+    }
+  }
+
+
+
+}

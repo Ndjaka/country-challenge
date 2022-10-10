@@ -1,5 +1,6 @@
 @import "../../sass/colors";
 @import "../../sass/typography";
+@import "../../sass/mixins";
 
 .select{
   margin-top: 25px;
@@ -32,6 +33,14 @@
         margin: 7px 0;
         cursor: pointer;
       }
+    }
 
+  @include respond(tab-port){
+    width: 25%;
   }
+
+  @include respond(tab-land){
+    width: 20%;
+  }
+
 }

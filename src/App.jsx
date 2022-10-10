@@ -1,7 +1,6 @@
 import Header from "./components/Header/Header.jsx";
-import Input from "./components/Input/Input.jsx";
-import Select from "./components/Select/Select.jsx";
-import List from "./components/Countries/List/List.jsx";
+import CountryPage from "./Pages/CountryPage/CountryPage.jsx";
+import {Route,Routes} from "react-router-dom";
 
 
 function App() {
@@ -9,12 +8,11 @@ function App() {
   return (
     <div>
         <Header/>
-        <div className={'main'}>
-            <Input/>
-            <Select/>
-            <List/>
+             <Routes>
+                <Route path="/" element={<CountryPage />}/>
+                <Route path="/country/:name" element={<div />}/>
+            </Routes>
         </div>
-     </div>
   )
 }
 

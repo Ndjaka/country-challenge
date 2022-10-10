@@ -1,9 +1,11 @@
 @import "../../sass/colors";
 @import "../../sass/typography";
+@import "../../sass/mixins";
 
 .text__field{
   margin-top: 25px;
   position: relative;
+  width: 100%;
   [name="search"]{
     position: absolute;
     top: 50%;
@@ -24,5 +26,13 @@
     &::placeholder {
       color: $dark-mode-text-and-light-mode-elements;
     }
+  }
+
+  @include respond(tab-port){
+    width: calc(50% - 90px);
+  }
+
+  @include respond(tab-land){
+    width: 30%;
   }
 }
