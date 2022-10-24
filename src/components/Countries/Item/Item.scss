@@ -1,37 +1,43 @@
 @import "../../../sass/typography";
 @import "../../../sass/colors";
 
-.card{
-    cursor: pointer;
-    img{
-      width: 100%;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      height: 200px;
-    }
-  &__body{
+.card {
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  &__body {
     font-size: $home-page-items;
     background-color: $dark-mode-elements;
     margin-top: -5px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     padding: 25px;
-    .title{
+
+    .title {
       font-weight: 800;
       margin-bottom: 25px;
     }
-    .description{
-       &__item{
-         margin-bottom: 5px;
-          display: flex;
-          .label{
-            font-weight: 600;
-            margin-right: 3px;
-          }
-         .value{
-           font-weight: 300;
-         }
+
+    .description {
+      &__item {
+        margin-bottom: 5px;
+        display: flex;
+        .label {
+          font-weight: 600;
+          margin-right: 3px;
         }
+
+        .value {
+          font-weight: 300;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,18 @@
+@import "../../sass/typography";
+@import "../../sass/colors";
+
+
+
+.button{
+  display: flex;
+  border-radius: 2px;
+  width: 100px;
+  height: 30px;
+  place-content: center;
+  place-items: center;
+  gap: 4px;
+  font-size: $detail-page;
+  background: $dark-mode-elements;
+  -webkit-box-shadow: -2px 1px 12px 7px rgba(0,0,0,0.44);
+  box-shadow: -2px 1px 12px 7px rgb(0 0 0 / 23%);
+}

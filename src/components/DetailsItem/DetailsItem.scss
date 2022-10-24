@@ -1,0 +1,12 @@
+@import "../../sass/colors";
+@import "../../sass/typography";
+@import "../../sass/mixins";
+
+.detail__item{
+  display: flex;
+  gap: 4px;
+  &__label{
+    font-size: $detail-page;
+    font-weight: 600;
+  }
+}
