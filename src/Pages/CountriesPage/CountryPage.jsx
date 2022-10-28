@@ -4,6 +4,8 @@ import Select from "../../components/Select/Select.jsx";
 import List from "../../components/Countries/List/List.jsx";
 import "./country.page.scss"
 import CountrieService from "../../service/countrieService.js";
+import SkeletonElement from "../../components/Skeletons/SkeletonElement.jsx";
+import SkeletonCountries from "../../components/Skeletons/SkeletonCountries.jsx";
 
 function CountryPage() {
     const countriesInStorage = localStorage.getItem('countries');
@@ -63,7 +65,7 @@ function CountryPage() {
                 <Select onSelectRegion={(value) => findCountryByRegion(value)}/>
             </div>
             <List countries={countries}/>
-        </div>
+         </div>
     );
 }
 

@@ -3,6 +3,7 @@ import Item from "../Item/Item.jsx";
 import './List.scss';
 import PropTypes from "prop-types";
 import {useNavigate} from "react-router-dom";
+import SkeletonCountries from "../../Skeletons/SkeletonCountries.jsx";
 
 function List({countries}) {
     const navigate = useNavigate();
@@ -20,6 +21,9 @@ function List({countries}) {
                           onClick={() => navigate(`/country/${country.name}`)}
                     />
                 )
+            }
+            {
+                countries.length === 0 && Array.from({length: 100}, (v, k) => k + 1).map(v => <SkeletonCountries/>)
             }
         </div>
     );

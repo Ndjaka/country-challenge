@@ -4,10 +4,11 @@ import "./country-details.page.scss"
 import DetailsItem from "../../components/DetailsItem/DetailsItem.jsx";
 import CountrieService from "../../service/countrieService.js";
 import {useNavigate, useParams} from "react-router-dom";
+import SkeletonElement from "../../components/Skeletons/SkeletonElement.jsx";
 
 function CountryDetailsPage() {
     const {name} = useParams();
-    const  [details,setDetails] = useState();
+    const [details, setDetails] = useState();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -16,19 +17,20 @@ function CountryDetailsPage() {
 
     const getCountryDetails = () => {
         CountrieService.findCountryByName(name.toLowerCase(), true)
-        .then(async res => {
-            const data = await res.json();
-            console.log(data[0]);
-            setDetails(data[0]);
-        })
-        .catch(err => console.log(err));
+            .then(async res => {
+                const data = await res.json();
+                console.log(data[0]);
+                setDetails(data[0]);
+            })
+            .catch(err => console.log(err));
     }
 
     return (
         <div className={'country-details'}>
-            <div className={'flag'} onClick={()=>navigate(-1)}>
-                <Button showIcon value={'Back'} />
-                <img src={details?.flag} alt="flags"/>
+            <div className={'flag'} onClick={() => navigate(-1)}>
+                <Button showIcon value={'Back'}/>
+                {details ? <img src={details.flag} alt="flags"/> :
+                    <SkeletonElement type={'thumbnail'} witdh={'639px'} height={'319px'}/>}
             </div>
             <div className={'description'}>
                 <h3>{details?.name}</h3>
@@ -49,7 +51,7 @@ function CountryDetailsPage() {
                 <div className={'description__countries'}>
                     <div className={'description__countries__label'}>Border countries:</div>
                     <div className={'description__countries__item'}>
-                        {details?.borders?.map((value,id) => <Button key={id} value={value}/>) }
+                        {details?.borders?.map((value, id) => <Button key={id} value={value}/>)}
                     </div>
                 </div>
 
